@@ -1,6 +1,7 @@
+
 import React, { useEffect, useState } from "react";
 import calendarStyle from './mealbox.css'
-
+import { getMeals } from "./MealManager";
 export default function Calendar() {
     const [dates, setDates] = useState([]);
     const [month, setMonth] = useState(new Date().getMonth());
@@ -8,8 +9,37 @@ export default function Calendar() {
     const [monthname, setMonthName] = useState(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"])
     const [openMenu, setOpenMenu] = useState([false, false, false, false, false])
     const [dateopen, setDateOpen] = useState(0);
-    useEffect(() => { getDates(month, year) }, [month, year])
 
+    const [meals, setMeals] = useState([])
+    const [selectmeals, setSelectMeals] = useState([]);
+    useEffect(() => { getDates(month, year) }, [month, year])
+    useEffect(() => { fetchMeals() }, [])
+    useEffect(() => {
+        if (dateopen) {
+            filterMeals();
+        }
+    }, [dateopen, meals]);
+
+
+    const fetchMeals = async () => {
+        const data = await getMeals();
+        setMeals(data);
+    }
+
+    // function filterMeals() {
+
+    //     setSelectMeals(() => {
+    //         let select;
+    //         for (let i = 0; i < meals.length; i++) {
+    //             if (new Date(meals[i].date).getDate() == dateopen)
+    //                 select = meals[i]
+    //         }
+    //         return select;
+    //     }
+    //     );
+    //     console.log(selectmeals)
+
+    // }
     function getDates() {
         //console.log("year" + year)
         //setYear(year);
@@ -67,6 +97,7 @@ export default function Calendar() {
         setOpenMenu(open);
     }
     function dateClick(e) {
+        //if (e.target.textContent = undefined) return;
         const week = ['Week1', 'Week2', 'Week3', 'Week4', 'Week5', 'Week6']
         //console.log(e.target.classList[3]);
         //console.log(week.indexOf(e.target.classList[3]))
@@ -75,9 +106,19 @@ export default function Calendar() {
             open[i] = false;
         open[week.indexOf(e.target.classList[3])] = !open[week.indexOf(e.target.classList[3])];
         setOpenMenu(open);
-        setDateOpen(e.target.textContent)
+        setDateOpen(e.target.textContent);
+
+        filterMeals();
 
     }
+    function filterMeals() {
+        if (meals.length === 0) return;
+        const selectedMeals = meals.filter((meal) => new Date(meal.date).getDate() == dateopen).flatMap(meal => meal.meals);
+        setSelectMeals(selectedMeals);
+    }
+    useEffect(() => {
+        console.log("Filtered Meals: ", selectmeals);
+    }, [selectmeals]);
 
     return (<div>
         <div className="Month">
@@ -108,37 +149,21 @@ export default function Calendar() {
                     <p className="selecteddate">{dateopen}th {monthname[month]}</p>
                     <p className="selectedyear">{year}</p>
                 </div>
-                <div className="meal-info">
-                    <div className="Meal1">Breakfast</div>
-                    <div className="mealtime">9:00 AM</div>
-                    <div className="address">221B Baker Street</div>
-                    <div className="Restraunt">VIT tiffin service</div>
-                    <div className="meal">Poha,Jalebi,Samosa</div>
-                </div>
-                <div className="meal-info">
-                    <div className="Meal1">Lunch</div>
-                    <div className="mealtime">1:00 PM</div>
-                    <div className="address">221B Baker Street</div>
-                    <div className="Restraunt">BBC tiffin service</div>
-                    <div className="meal">Poha,Jalebi,Samosa</div>
-                </div>
-                <div className="meal-info">
-                    <div className="Meal1">Snacks</div>
-                    <div className="mealtime">5:00 PM</div>
-                    <div className="address">221B Baker Street</div>
-                    <div className="Restraunt">VIT tiffin service</div>
-                    <div className="meal">Poha,Jalebi,Samosa</div>
-
-                </div>
-
-
+                {selectmeals.map((food, index) => (
+                    <div className="meal-info" key={index}>
+                        <div className="Meal1">{food.type}</div>
+                        <div className="mealtime">{food.time}</div>
+                        <div className="address">{food.address}</div>
+                        <div className="Restraunt">{food.restuarant}</div>
+                        <div className="meal">{food.items}</div>
+                    </div>
+                ))}
                 <div className="add">+</div>
             </div>)}
             <div className="Week">Week2</div>
-            <div className="Date R2 C1 Week2">{dates[7]}
+            <div className="Date R2 C1 Week2" onClick={(e) => dateClick(e)}>{dates[7]}
             </div>
-            <div className="Date R2 C2 Week2">{dates[8]}
-                <div className="summary">Breakfast</div>
+            <div className="Date R2 C2 Week2" onClick={(e) => dateClick(e)}>{dates[8]}
             </div>
             <div className="Date R2 C3 Week2" onClick={(e) => dateClick(e)}>{dates[9]}</div>
             <div className="Date R2 C4 Week2" onClick={(e) => dateClick(e)}>{dates[10]}</div>
@@ -146,39 +171,19 @@ export default function Calendar() {
             <div className="Date R2 C6 Week2" onClick={(e) => dateClick(e)}>{dates[12]}</div>
             <div className="Date R2 C7 Week2" onClick={(e) => dateClick(e)}>{dates[13]}</div>
             {openMenu[1] && (<div className="Week-menu Week2 ">
-                <div className="today">
-                    <p className="selecteddate">14th January</p>
-                    <p className="selectedyear">2025</p>
+                <div className=" today">
+                    <p className="selecteddate">{dateopen}th {monthname[month]}</p>
+                    <p className="selectedyear">{year}</p>
                 </div>
-                <div className="meal-info">
-                    <div className="Meal1">Breakfast</div>
-                    <div className="mealtime">9:00 AM</div>
-                    <div className="address">221B Baker Street</div>
-                    <div className="Restraunt">VIT tiffin service</div>
-                    <div className="meal">Poha,Jalebi,Samosa</div>
-                </div>
-                <div className="meal-info">
-                    <div className="Meal1">Lunch</div>
-                    <div className="mealtime">1:00 PM</div>
-                    <div className="address">221B Baker Street</div>
-                    <div className="Restraunt">BBC tiffin service</div>
-                    <div className="meal">Poha,Jalebi,Samosa</div>
-                </div>
-                <div className="meal-info">
-                    <div className="Meal1">Snacks</div>
-                    <div className="mealtime">5:00 PM</div>
-                    <div className="address">221B Baker Street</div>
-                    <div className="Restraunt">VIT tiffin service</div>
-                    <div className="meal">Poha,Jalebi,Samosa</div>
-
-                </div>
-                <div className="meal-info">
-                    <div className="Meal1">Breakfast</div>
-                    <div className="mealtime">9:00 AM</div>
-                    <div className="address">221B Baker Street</div>
-                    <div className="Restraunt">VIT tiffin service</div>
-                    <div className="meal">Poha,Jalebi,Samosa</div>
-                </div>
+                {selectmeals.map((food, index) => (
+                    <div className="meal-info" key={index}>
+                        <div className="Meal1">{food.type}</div>
+                        <div className="mealtime">{food.time}</div>
+                        <div className="address">{food.address}</div>
+                        <div className="Restraunt">{food.restuarant}</div>
+                        <div className="meal">{food.items}</div>
+                    </div>
+                ))}
 
                 <div className="add">+</div>
             </div>)}
@@ -191,32 +196,19 @@ export default function Calendar() {
             <div className="Date R3 C6 Week3" onClick={(e) => dateClick(e)}>{dates[19]}</div>
             <div className="Date R3 C7 Week3" onClick={(e) => dateClick(e)}>{dates[20]}</div>
             {openMenu[2] && (<div className="Week-menu Week3">
-                <div className="today">
-                    <p className="selecteddate">14th January</p>
-                    <p className="selectedyear">2025</p>
+                <div className=" today">
+                    <p className="selecteddate">{dateopen}th {monthname[month]}</p>
+                    <p className="selectedyear">{year}</p>
                 </div>
-                <div className="meal-info">
-                    <div className="Meal1">Breakfast</div>
-                    <div className="mealtime">9:00 AM</div>
-                    <div className="address">221B Baker Street</div>
-                    <div className="Restraunt">VIT tiffin service</div>
-                    <div className="meal">Poha,Jalebi,Samosa</div>
-                </div>
-                <div className="meal-info">
-                    <div className="Meal1">Lunch</div>
-                    <div className="mealtime">1:00 PM</div>
-                    <div className="address">221B Baker Street</div>
-                    <div className="Restraunt">BBC tiffin service</div>
-                    <div className="meal">Poha,Jalebi,Samosa</div>
-                </div>
-                <div className="meal-info">
-                    <div className="Meal1">Snacks</div>
-                    <div className="mealtime">5:00 PM</div>
-                    <div className="address">221B Baker Street</div>
-                    <div className="Restraunt">VIT tiffin service</div>
-                    <div className="meal">Poha,Jalebi,Samosa</div>
-
-                </div>
+                {selectmeals.map((food, index) => (
+                    <div className="meal-info" key={index}>
+                        <div className="Meal1">{food.type}</div>
+                        <div className="mealtime">{food.time}</div>
+                        <div className="address">{food.address}</div>
+                        <div className="Restraunt">{food.restuarant}</div>
+                        <div className="meal">{food.items}</div>
+                    </div>
+                ))}
 
 
                 <div className="add">+</div>
