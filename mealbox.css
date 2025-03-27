@@ -1,0 +1,689 @@
+* {
+    margin: 0;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(227, 158, 30, 0.942);
+}
+
+.Navbar {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 20px 20px;
+    background-color: rgb(212, 127, 8);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.Nav-contents {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    right: 300px;
+}
+
+.Nav-contents a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.Nav-contents a:hover {
+    color: black;
+}
+
+
+.logotext {
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-left: 20px;
+}
+
+button.profile {
+    position: fixed;
+    right: 20px;
+    top: 10px;
+    padding: 10px;
+    border-width: 0cap;
+    background-color: white;
+    /* background: url(profile3.jpg) center; */
+    background-size: cover;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.profile-window {
+    height: 400px;
+    width: 300px;
+    background-color: white;
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid orange;
+    z-index: 10;
+    padding: 10px;
+    z-index: 2;
+}
+
+.profile-pic img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+.l1 {
+    width: 80%;
+    margin: 20px;
+}
+
+.user-name {
+    margin: 20px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.food-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 60px;
+    margin-top: 50px;
+    justify-content: left;
+}
+
+.food-menu .Headbox {
+    display: flex;
+    text-align: center;
+    background-color: white;
+    border-radius: 25px;
+    height: 300px;
+    width: 1420px;
+    padding: 30px;
+    border: 1px solid rgb(218, 140, 14);
+    margin-top: 50px;
+    margin: 20px auto;
+    margin-bottom: 100px;
+    margin-left: 10px;
+    max-width: 100%;
+
+}
+
+.food-menu .Headbox img {
+    width: 450px;
+    height: 300px;
+    text-align: left;
+    border-radius: 20px;
+}
+
+.food-menu .Headbox h3 {
+    text-align: center;
+    margin-left: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+    font-size: 4rem;
+    color: rgb(212, 127, 8);
+}
+
+.search-bar {
+    display: flex;
+    text-align: center;
+}
+
+.search-bar input {
+    width: 200%;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    font-size: 1rem;
+    border: 1px solid rgb(218, 140, 14);
+    border-radius: 8px;
+    color: rgb(170, 170, 170);
+}
+
+.search-bar button {
+    position: relative;
+    left: 320px;
+    margin-left: 0px;
+    width: 100px;
+    height: 40px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid rgb(218, 140, 14);
+    background-color: rgb(212, 127, 8);
+    cursor: pointer;
+    color: white;
+    font-size: 1.8 rem;
+}
+
+.search-bar button:hover {
+    background-color: rgb(218, 140, 14);
+    color: black;
+}
+
+.items {
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(1, 5fr);
+}
+
+.box {
+    display: flex;
+    background-color: white;
+    border-radius: 25px;
+    width: 1380px;
+    height: 200px;
+    padding: 50px;
+    border: 1px solid rgb(218, 140, 14);
+    text-align: center;
+    margin: 20 auto;
+    margin-top: 10px;
+}
+
+.box img {
+    width: 200px;
+    height: 200px;
+}
+
+.box h2 {
+    margin-left: 50px;
+}
+
+.box p {
+    margin-left: 50px;
+}
+
+.box:hover {}
+
+.items2 {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+}
+
+.box2 {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 25px;
+    width: 600px;
+    height: 200px;
+    padding: 50px;
+    border: 1px solid rgb(218, 140, 14);
+    text-align: center;
+    margin: 10 auto;
+    margin-top: 10px;
+}
+
+.box2 img {
+    width: 200px;
+    height: 200px;
+}
+
+.box2 h2 {
+    margin-left: 20px;
+}
+
+.box2 p {
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.box2:hover {
+    background-color: rgb(218, 140, 14);
+    cursor: pointer;
+}
+
+.Statusbox {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px;
+    border: 1px solid rgb(218, 140, 14);
+    margin: 20px;
+    margin-bottom: 0px;
+    width: 90%;
+    height: 300px;
+    gap: 10px;
+    align-self: center;
+}
+
+
+
+.food-menu .Statusbox img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.food-menu .Statusbox h1 {
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgb(212, 127, 8);
+    margin-bottom: 2px;
+}
+
+.Statusbox .Restraunt {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1.2rem;
+    color: rgb(100, 100, 100);
+}
+
+.Statusbox .Restraunt h2 {
+    font-size: 1.5rem;
+    color: rgb(212, 127, 8);
+
+}
+
+.Restraunt .address {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Restraunt .Order {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Statusbox .Restraunt .address img {
+    width: 16px;
+    height: 16px;
+}
+
+.Statusbox .details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    font-size: 1.2rem;
+    color: rgb(100, 100, 100);
+}
+
+.date,
+.time,
+.members {
+    text-align: right;
+    font-size: 1.2rem;
+    color: rgb(100, 100, 100);
+    margin-bottom: 110px;
+
+}
+
+.Statusbox .edit-button {
+    margin-top: 150px;
+    margin-right: 100px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(212, 127, 8);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100px;
+
+}
+
+.Month {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 30px;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.Day {
+    background-color: white;
+    border-radius: 25px;
+    width: 120px;
+    height: 20px;
+    padding: 30px;
+    border: 1px solid rgb(218, 140, 14);
+    text-align: center;
+    justify-self: center;
+}
+
+
+.Date {
+    /* display: grid; */
+    background-color: white;
+    border-radius: 25px;
+    width: 120px;
+    height: 120px;
+    padding: 30px;
+    border: 1px solid rgb(218, 140, 14);
+    text-align: center;
+}
+
+.Week {
+    background-color: white;
+    border-radius: 25px;
+    width: 50px;
+    height: 120px;
+    padding: 30px;
+    border: 1px solid rgb(218, 140, 14);
+    text-align: center;
+    justify-self: center;
+
+}
+
+.no {
+    visibility: hidden;
+    height: 20px;
+}
+
+.Calendar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    grid-column: span 8;
+    background-color: white;
+    border-radius: 25px;
+    width: 1240px;
+    height: 50px;
+    padding: 30px;
+    border: 1px solid rgb(218, 140, 14);
+    text-align: center;
+    justify-self: right;
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(100, 100, 100);
+
+}
+
+.currentMonth {
+    margin-right: 10px;
+}
+
+.Next {
+    position: absolute;
+    right: 0;
+    height: 50px;
+    width: 40px;
+    top: 0;
+    bottom: 0;
+    /* border: 1px solid rgb(212, 127, 8); */
+    border-radius: 25px;
+    padding: 20px;
+    margin: 10px;
+    margin-bottom: 10px;
+
+
+}
+
+.Prev {
+    position: absolute;
+    left: 0;
+    height: 50px;
+    width: 40px;
+    top: 0;
+    bottom: 0;
+    /* border: 1px solid rgb(212, 127, 8); */
+    border-radius: 25px;
+    padding: 20px;
+    margin: 10px;
+    margin-bottom: 10px;
+
+}
+
+.Prev:hover,
+.Next:hover {
+    background-color: rgb(218, 140, 14);
+    cursor: pointer;
+}
+
+.meal-info {
+    background-color: white;
+    border-radius: 25px;
+    width: 160px;
+    margin-left: 10px;
+    height: 200px;
+    padding: 30px;
+    border: 1px solid rgb(218, 140, 14);
+    text-align: center;
+    gap: 5px;
+}
+
+.today {
+    width: 230px;
+    border: none;
+    text-align: center;
+    gap: 5px;
+    padding: 30px;
+}
+
+
+
+.today h3 {
+    font-size: 2rem;
+    color: rgb(212, 127, 8);
+
+}
+
+.today p,
+.selecteddate,
+.selectedyear {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: rgb(212, 127, 8);
+
+}
+
+.Week-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    grid-column: span 8;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid rgb(218, 140, 14);
+    border-radius: 25px;
+    text-align: center;
+    margin-left: 160px;
+    height: auto;
+
+}
+
+.Date:hover {
+    background-color: rgb(218, 140, 14);
+    cursor: pointer;
+}
+
+.show {
+    display: none;
+    visibility: hidden;
+}
+
+
+.meal-info .Meal1 {
+    font-size: 1.5rem;
+    padding: 10px;
+    color: rgb(212, 127, 8);
+}
+
+.meal-info .address {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+}
+
+.meal-info .mealtime {
+    font-size: 1rem;
+}
+
+.meal-info:hover {
+    background-color: rgb(218, 140, 14);
+    cursor: pointer;
+}
+
+.meal-info:hover>.Meal1 {
+    color: black;
+}
+
+
+.Week-menu .today p {
+    margin-top: 10px;
+    font-size: 1.8rem;
+    color: rgb(212, 127, 8);
+
+}
+
+.Week-menu .add {
+
+    background-color: rgb(218, 217, 216);
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    padding: 10px;
+    align-content: center;
+    font-size: 2rem;
+    color: rgb(100, 100, 100);
+    cursor: pointer;
+}
+
+
+
+/*Create Meal page*/
+.create-meal {
+    height: 650px;
+    width: 90%;
+    background-color: white;
+    z-index: 2;
+    position: fixed;
+    top: 100px;
+    border-radius: 25px;
+    display: flex;
+}
+
+.leftside {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leftside {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: rgb(100, 100, 100);
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: rgb(218, 217, 216);
+}
+
+.create-meal .leftside {
+    margin-top: 40px;
+    margin-left: 30px;
+    width: 30%;
+}
+
+
+.today {
+    width: 230px;
+    border: none;
+    text-align: center;
+    gap: 2px;
+    padding: 5px;
+}
+
+.Meal1 {
+    font-size: 2.5rem;
+    padding: 60px;
+    padding-left: 10px;
+    color: rgb(212, 127, 8);
+}
+
+.rightside p {
+    font-size: 1.7rem;
+    padding-left: 10px;
+    color: rgb(212, 127, 8);
+}
+
+.choose {
+    display: flex;
+    padding: 30px;
+    gap: 20px;
+}
+
+.choose input {
+    width: 400px;
+}
+
+.choose button {
+    margin-right: 100px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(212, 127, 8);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 200px;
+}
+
+.rightbutton {
+    margin-top: 50px;
+}
+
+.Addressinfo {
+    margin-top: 50px;
+    padding: 30px;
+    gap: 20px;
+}
