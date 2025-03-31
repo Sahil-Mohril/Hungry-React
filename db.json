@@ -1,0 +1,308 @@
+{
+  "meals": [
+    {
+      "date": "2025-03-01",
+      "day": "Saturday",
+      "week": "Week1",
+      "meals": [
+        {
+          "type": "Breakfast",
+          "time": "8:00 AM",
+          "restaurant": "City Diner",
+          "address": "221B Baker Street",
+          "items": [
+            "Dosa",
+            "Sambar",
+            "Chutney"
+          ]
+        },
+        {
+          "type": "Lunch",
+          "time": "1:00 PM",
+          "restaurant": "BBC Tiffin Service",
+          "address": "221B Baker Street",
+          "items": [
+            "Roti",
+            "Sabzi",
+            "Curd"
+          ]
+        },
+        {
+          "type": "Snacks",
+          "time": "5:00 PM",
+          "restaurant": "Local Café",
+          "address": "221B Baker Street",
+          "items": [
+            "Samosa",
+            "Chai"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-04-02",
+      "day": "Sunday",
+      "week": "Week1",
+      "meals": [
+        {
+          "type": "Breakfast",
+          "time": "9:00 AM",
+          "restaurant": "VIT Tiffin Service",
+          "address": "221B Baker Street",
+          "items": [
+            "Poha",
+            "Jalebi",
+            "Samosa"
+          ]
+        },
+        {
+          "type": "Lunch",
+          "time": "1:00 PM",
+          "restaurant": "BBC Tiffin Service",
+          "address": "221B Baker Street",
+          "items": [
+            "Dal",
+            "Rice",
+            "Paneer"
+          ]
+        },
+        {
+          "type": "Snacks",
+          "time": "5:00 PM",
+          "restaurant": "VIT Tiffin Service",
+          "address": "221B Baker Street",
+          "items": [
+            "Tea",
+            "Biscuits"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-03-03",
+      "day": "Monday",
+      "week": "Week2",
+      "meals": [
+        {
+          "type": "Breakfast",
+          "time": "8:30 AM",
+          "restaurant": "Healthy Start",
+          "address": "Park Avenue",
+          "items": [
+            "Oatmeal",
+            "Fruits",
+            "Milk"
+          ]
+        },
+        {
+          "type": "Lunch",
+          "time": "12:30 PM",
+          "restaurant": "Spicy Delights",
+          "address": "Main Street",
+          "items": [
+            "Chicken Curry",
+            "Jeera Rice",
+            "Salad"
+          ]
+        },
+        {
+          "type": "Dinner",
+          "time": "8:00 PM",
+          "restaurant": "Family Diner",
+          "address": "Downtown",
+          "items": [
+            "Pasta",
+            "Garlic Bread",
+            "Soup"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-03-04",
+      "day": "Tuesday",
+      "week": "Week2",
+      "meals": [
+        {
+          "type": "Breakfast",
+          "time": "8:00 AM",
+          "restaurant": "Morning Bites",
+          "address": "Greenwood Lane",
+          "items": [
+            "Idli",
+            "Sambar",
+            "Coconut Chutney"
+          ]
+        },
+        {
+          "type": "Lunch",
+          "time": "1:00 PM",
+          "restaurant": "Downtown Diner",
+          "address": "High Street",
+          "items": [
+            "Rajma",
+            "Rice",
+            "Raita"
+          ]
+        },
+        {
+          "type": "Dinner",
+          "time": "7:30 PM",
+          "restaurant": "Tandoori Nights",
+          "address": "King's Road",
+          "items": [
+            "Butter Chicken",
+            "Naan",
+            "Lassi"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-03-05",
+      "day": "Wednesday",
+      "week": "Week2",
+      "meals": [
+        {
+          "type": "Breakfast",
+          "time": "9:00 AM",
+          "restaurant": "Sunrise Café",
+          "address": "Ocean Drive",
+          "items": [
+            "Pancakes",
+            "Maple Syrup",
+            "Coffee"
+          ]
+        },
+        {
+          "type": "Lunch",
+          "time": "12:45 PM",
+          "restaurant": "Veggie Hub",
+          "address": "Market Street",
+          "items": [
+            "Vegetable Biryani",
+            "Raita",
+            "Papad"
+          ]
+        },
+        {
+          "type": "Dinner",
+          "time": "8:15 PM",
+          "restaurant": "Home Kitchen",
+          "address": "Baker Street",
+          "items": [
+            "Dal Tadka",
+            "Chapati",
+            "Aloo Gobi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "33ef",
+      "date": "2025-03-11",
+      "day": "",
+      "week": "",
+      "meals": [
+        {
+          "type": "Breakfast",
+          "time": "08:30",
+          "restaurant": "",
+          "address": "VIT",
+          "items": [
+            "Dosa",
+            "Idli"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "54f7",
+      "date": "2025-03-05",
+      "day": "",
+      "week": "",
+      "meals": [
+        {
+          "type": "Breakfast",
+          "time": "",
+          "restaurant": "Curry Leaf",
+          "address": "VIT",
+          "items": [
+            "Dosa",
+            "Idli"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1796",
+      "date": "2025-03-25",
+      "day": "",
+      "week": "",
+      "meals": [
+        {
+          "type": "Lunch",
+          "time": "13:30",
+          "restaurant": "Curry Leaf",
+          "address": "M block",
+          "items": [
+            "Pav Bhaji"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "28ed",
+      "date": "2025-04-24",
+      "day": "",
+      "week": "",
+      "meals": [
+        {
+          "type": "Dinner",
+          "time": "21:00",
+          "restaurant": "Vellore Kitchen",
+          "address": "M block",
+          "items": [
+            "Garlic Naan",
+            "Paneer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5a14",
+      "date": "2025-03-31",
+      "day": "",
+      "week": "",
+      "meals": [
+        {
+          "type": "Breakfast",
+          "time": "08:00",
+          "restaurant": "Curry Leaf",
+          "address": "VIT",
+          "items": [
+            "Poori Aloo masala",
+            "Tea"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b79f",
+      "date": "2025-03-31",
+      "day": "",
+      "week": "",
+      "meals": [
+        {
+          "type": "Lunch",
+          "time": "13:54",
+          "restaurant": "Vellore Kitchen",
+          "address": "VIT",
+          "items": [
+            "Soya chunck tikka"
+          ]
+        }
+      ]
+    }
+  ]
+}
